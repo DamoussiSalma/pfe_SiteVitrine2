@@ -3,10 +3,11 @@ import Back from "../common/Back"
 import Heading from "../common/Heading"
 import img from "../images/about.jpg"
 import "./about.css"
-
+import Footer from "../common/footer/Footer"
 const About = () => {
   return (
     <>
+      
       <section className='about'>
         <Back name='About Us' title='About Us - Who We Are?' cover={img} />
         <div className='container flex mtop'>
@@ -22,6 +23,7 @@ const About = () => {
           </div>
         </div>
       </section>
+      <Footer/>
     </>
   )
 }

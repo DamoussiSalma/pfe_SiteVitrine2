@@ -38,8 +38,8 @@ const PriceCard = () => {
             <button
               className='btn5'
               style={{
-                background: item.plan === "Standard" ? "#27ae60" : "#fff",
-                color: item.plan === "Standard" ? "#fff" : "#27ae60",
+                background: item.plan === "Standard" ? "#09155a" : "#fff",
+                color: item.plan === "Standard" ? "#fff" : "#09155a",
               }}
             >
               Start {item.plan}

@@ -1,17 +1,36 @@
 import React, { useState } from "react"
 import "./header.css"
 import { nav } from "../../data/Data"
-import { Link } from "react-router-dom"
+import { Link ,useNavigate } from "react-router-dom"
+import {useContext} from "react";
+import {UserContext} from "../../userContext/userContext";
+import { FaHome } from "react-icons/fa";
 
 const Header = () => {
   const [navList, setNavList] = useState(false)
+  const {user} = useContext(UserContext);
+  const navigate = useNavigate();
+
+  const handleclick =()=>{
+    if(user){navigate("/host/publierannonce")}
+    else {navigate("/login")}
+  
+  }
+  const handleclick2 =()=>{
+    navigate("/login")
+    }
+
+    /*const logout =()=>{
+      localStorage.removeItem("accessToken");
+      
+    }*/
 
   return (
     <>
-      <header>
+      <header className='header'>
         <div className='container flex'>
           <div className='logo'>
-            <img src='./images/logo.png' alt='' />
+          <Link to='/' color="blue"> <FaHome /> HomeKey</Link> 
           </div>
           <div className='nav'>
             <ul className={navList ? "small" : "flex"}>
@@ -22,12 +41,22 @@ const Header = () => {
               ))}
             </ul>
           </div>
+           
           <div className='button flex'>
-            <h4>
-              <span>2</span> My List
-            </h4>
-            <button className='btn1'>
-              <i className='fa fa-sign-out'></i> Sign In
+
+          {user && <h4>
+            {user.name} 
+          </h4>}
+         
+         {!user && <h4>
+            <a onClick={handleclick2} style={{marginRight:20}}>s'authentifier</a>
+          </h4>}
+         
+      
+            
+            
+            <button className= 'btn1' onClick={handleclick}>
+              <i className=''></i> publier annonce
             </button>
           </div>
 

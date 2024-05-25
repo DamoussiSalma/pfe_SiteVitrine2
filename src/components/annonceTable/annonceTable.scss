@@ -1,0 +1,23 @@
+@import "../pages/styles/breakpoints.scss";
+@import "../pages/styles/variables.scss";
+
+.listings {
+  padding: 0 60px 120px;
+  display: flex;
+  flex-direction: row;
+  
+  justify-content: space-evenly;
+  flex-direction: row;
+ 
+
+  @include lg {
+    padding: 0 20px 120px;
+  }
+ 
+}
+.iconbuttons{
+  display: flex;
+  justify-content:end;
+  padding-right: 12rem;
+  
+}
