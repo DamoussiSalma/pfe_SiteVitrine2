@@ -13,7 +13,9 @@ const Header = () => {
 
   const handleclick =()=>{
     if(user){navigate("/host/publierannonce")}
-    else {navigate("/login")}
+    else {
+      navigate("/login")
+  }
   
   }
   const handleclick2 =()=>{
@@ -64,6 +66,7 @@ const Header = () => {
             <button onClick={() => setNavList(!navList)}>{navList ? <i className='fa fa-times'></i> : <i className='fa fa-bars'></i>}</button>
           </div>
         </div>
+
       </header>
     </>
   )
